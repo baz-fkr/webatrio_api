@@ -1,0 +1,432 @@
+{
+	"info": {
+		"_postman_id": "6c6c4bd4-0fc6-4070-a194-ed81ef8cf4c0",
+		"name": "WebAtrio.UsersJobsManagement.Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12648926"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "job",
+					"item": [
+						{
+							"name": "/api/job/add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"companyName\": \"<string>\",\n  \"personId\": \"<uuid>\",\n  \"position\": \"<string>\",\n  \"startDate\": \"<dateTime>\",\n  \"id\": \"<uuid>\",\n  \"endDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/job/add",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"job",
+										"add"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"companyName\": \"<string>\",\n  \"personId\": \"<uuid>\",\n  \"position\": \"<string>\",\n  \"startDate\": \"<dateTime>\",\n  \"id\": \"<uuid>\",\n  \"endDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/job/add",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"job",
+												"add"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"companyName\": \"<string>\",\n  \"personId\": \"<uuid>\",\n  \"position\": \"<string>\",\n  \"startDate\": \"<dateTime>\",\n  \"id\": \"<uuid>\",\n  \"endDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "/api/job/person/:personId/dates",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/job/person/:personId/dates?startDate=<dateTime>&endDate=<dateTime>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"job",
+										"person",
+										":personId",
+										"dates"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "<dateTime>"
+										},
+										{
+											"key": "endDate",
+											"value": "<dateTime>"
+										}
+									],
+									"variable": [
+										{
+											"key": "personId",
+											"value": "<uuid>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/job/person/:personId/dates?startDate=<dateTime>&endDate=<dateTime>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"job",
+												"person",
+												":personId",
+												"dates"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "<dateTime>"
+												},
+												{
+													"key": "endDate",
+													"value": "<dateTime>"
+												}
+											],
+											"variable": [
+												{
+													"key": "personId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"companyName\": \"<string>\",\n    \"personId\": \"<uuid>\",\n    \"position\": \"<string>\",\n    \"startDate\": \"<dateTime>\",\n    \"id\": \"<uuid>\",\n    \"endDate\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"updatedAt\": \"<dateTime>\"\n  },\n  {\n    \"companyName\": \"<string>\",\n    \"personId\": \"<uuid>\",\n    \"position\": \"<string>\",\n    \"startDate\": \"<dateTime>\",\n    \"id\": \"<uuid>\",\n    \"endDate\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"updatedAt\": \"<dateTime>\"\n  }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "person",
+					"item": [
+						{
+							"name": "/api/person/add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"birthDate\": \"<dateTime>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"id\": \"<uuid>\",\n  \"age\": \"<integer>\",\n  \"jobs\": [\n    {\n      \"companyName\": \"<string>\",\n      \"personId\": \"<uuid>\",\n      \"position\": \"<string>\",\n      \"startDate\": \"<dateTime>\",\n      \"id\": \"<uuid>\",\n      \"endDate\": \"<dateTime>\",\n      \"createdAt\": \"<dateTime>\",\n      \"updatedAt\": \"<dateTime>\"\n    },\n    {\n      \"companyName\": \"<string>\",\n      \"personId\": \"<uuid>\",\n      \"position\": \"<string>\",\n      \"startDate\": \"<dateTime>\",\n      \"id\": \"<uuid>\",\n      \"endDate\": \"<dateTime>\",\n      \"createdAt\": \"<dateTime>\",\n      \"updatedAt\": \"<dateTime>\"\n    }\n  ],\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/person/add",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"add"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"birthDate\": \"<dateTime>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"id\": \"<uuid>\",\n  \"age\": \"<integer>\",\n  \"jobs\": [\n    {\n      \"companyName\": \"<string>\",\n      \"personId\": \"<uuid>\",\n      \"position\": \"<string>\",\n      \"startDate\": \"<dateTime>\",\n      \"id\": \"<uuid>\",\n      \"endDate\": \"<dateTime>\",\n      \"createdAt\": \"<dateTime>\",\n      \"updatedAt\": \"<dateTime>\"\n    },\n    {\n      \"companyName\": \"<string>\",\n      \"personId\": \"<uuid>\",\n      \"position\": \"<string>\",\n      \"startDate\": \"<dateTime>\",\n      \"id\": \"<uuid>\",\n      \"endDate\": \"<dateTime>\",\n      \"createdAt\": \"<dateTime>\",\n      \"updatedAt\": \"<dateTime>\"\n    }\n  ],\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/person/add",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"person",
+												"add"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"birthDate\": \"<dateTime>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"id\": \"<uuid>\",\n  \"age\": \"<integer>\",\n  \"jobs\": [\n    {\n      \"companyName\": \"<string>\",\n      \"personId\": \"<uuid>\",\n      \"position\": \"<string>\",\n      \"startDate\": \"<dateTime>\",\n      \"id\": \"<uuid>\",\n      \"endDate\": \"<dateTime>\",\n      \"createdAt\": \"<dateTime>\",\n      \"updatedAt\": \"<dateTime>\"\n    },\n    {\n      \"companyName\": \"<string>\",\n      \"personId\": \"<uuid>\",\n      \"position\": \"<string>\",\n      \"startDate\": \"<dateTime>\",\n      \"id\": \"<uuid>\",\n      \"endDate\": \"<dateTime>\",\n      \"createdAt\": \"<dateTime>\",\n      \"updatedAt\": \"<dateTime>\"\n    }\n  ],\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "/api/person/getall",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/person/getall",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"getall"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/person/getall",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"person",
+												"getall"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"birthDate\": \"<dateTime>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"id\": \"<uuid>\",\n    \"age\": \"<integer>\",\n    \"jobs\": [\n      {\n        \"companyName\": \"<string>\",\n        \"personId\": \"<uuid>\",\n        \"position\": \"<string>\",\n        \"startDate\": \"<dateTime>\",\n        \"id\": \"<uuid>\",\n        \"endDate\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"updatedAt\": \"<dateTime>\"\n      },\n      {\n        \"companyName\": \"<string>\",\n        \"personId\": \"<uuid>\",\n        \"position\": \"<string>\",\n        \"startDate\": \"<dateTime>\",\n        \"id\": \"<uuid>\",\n        \"endDate\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"updatedAt\": \"<dateTime>\"\n      }\n    ],\n    \"createdAt\": \"<dateTime>\",\n    \"updatedAt\": \"<dateTime>\"\n  },\n  {\n    \"birthDate\": \"<dateTime>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"id\": \"<uuid>\",\n    \"age\": \"<integer>\",\n    \"jobs\": [\n      {\n        \"companyName\": \"<string>\",\n        \"personId\": \"<uuid>\",\n        \"position\": \"<string>\",\n        \"startDate\": \"<dateTime>\",\n        \"id\": \"<uuid>\",\n        \"endDate\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"updatedAt\": \"<dateTime>\"\n      },\n      {\n        \"companyName\": \"<string>\",\n        \"personId\": \"<uuid>\",\n        \"position\": \"<string>\",\n        \"startDate\": \"<dateTime>\",\n        \"id\": \"<uuid>\",\n        \"endDate\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"updatedAt\": \"<dateTime>\"\n      }\n    ],\n    \"createdAt\": \"<dateTime>\",\n    \"updatedAt\": \"<dateTime>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "/api/person/company/:companyName",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/person/company/:companyName",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"person",
+										"company",
+										":companyName"
+									],
+									"variable": [
+										{
+											"key": "companyName",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/person/company/:companyName",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"person",
+												"company",
+												":companyName"
+											],
+											"variable": [
+												{
+													"key": "companyName"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"birthDate\": \"<dateTime>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"id\": \"<uuid>\",\n    \"age\": \"<integer>\",\n    \"jobs\": [\n      {\n        \"companyName\": \"<string>\",\n        \"personId\": \"<uuid>\",\n        \"position\": \"<string>\",\n        \"startDate\": \"<dateTime>\",\n        \"id\": \"<uuid>\",\n        \"endDate\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"updatedAt\": \"<dateTime>\"\n      },\n      {\n        \"companyName\": \"<string>\",\n        \"personId\": \"<uuid>\",\n        \"position\": \"<string>\",\n        \"startDate\": \"<dateTime>\",\n        \"id\": \"<uuid>\",\n        \"endDate\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"updatedAt\": \"<dateTime>\"\n      }\n    ],\n    \"createdAt\": \"<dateTime>\",\n    \"updatedAt\": \"<dateTime>\"\n  },\n  {\n    \"birthDate\": \"<dateTime>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"id\": \"<uuid>\",\n    \"age\": \"<integer>\",\n    \"jobs\": [\n      {\n        \"companyName\": \"<string>\",\n        \"personId\": \"<uuid>\",\n        \"position\": \"<string>\",\n        \"startDate\": \"<dateTime>\",\n        \"id\": \"<uuid>\",\n        \"endDate\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"updatedAt\": \"<dateTime>\"\n      },\n      {\n        \"companyName\": \"<string>\",\n        \"personId\": \"<uuid>\",\n        \"position\": \"<string>\",\n        \"startDate\": \"<dateTime>\",\n        \"id\": \"<uuid>\",\n        \"endDate\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"updatedAt\": \"<dateTime>\"\n      }\n    ],\n    \"createdAt\": \"<dateTime>\",\n    \"updatedAt\": \"<dateTime>\"\n  }\n]"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}
