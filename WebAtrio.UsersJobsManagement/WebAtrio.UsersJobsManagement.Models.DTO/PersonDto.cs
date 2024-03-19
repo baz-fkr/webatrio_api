@@ -18,6 +18,10 @@ namespace WebAtrio.UsersJobsManagement.Models.DTO
         [DataType(DataType.DateTime)]
         public DateTime BirthDate { get; set; }
 
+        public int Age { get; set; }
+
+        public List<JobDto>? Jobs { get; set; }
+
         [DataType(DataType.DateTime)]
         public DateTime CreatedAt { get; set; }
 

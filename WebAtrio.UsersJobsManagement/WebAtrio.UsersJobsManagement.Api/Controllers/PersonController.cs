@@ -25,5 +25,26 @@ namespace WebAtrio.UsersJobsManagement.Api.Controllers
             PersonDto addedPerson = await _personService.AddPerson(person);
             return CreatedAtAction(nameof(AddPerson), new { id = addedPerson.Id }, addedPerson);
         }
+
+        [HttpGet]
+        [Route("getall")]
+        [ProducesResponseType(typeof(List<PersonDto>), 200)]
+        [SwaggerOperation(Summary = "Get all persons", Description = "Gets all persons in the system ordered alphabetically and includes their age and current job(s).")]
+        public async Task<IActionResult> GetAllPersons()
+        {
+            List<PersonDto> persons = await _personService.GetAllPersonsWithAgeAndCurrentJobs();
+            return Ok(persons);
+        }
+
+        [HttpGet]
+        [Route("company/{companyName}")]
+        [ProducesResponseType(typeof(List<PersonDto>), 200)]
+        public async Task<IActionResult> GetPersonsWhoWorkedForCompany(string companyName)
+        {
+            List<PersonDto> persons = await _personService.GetPersonsWhoWorkedForCompany(companyName);
+            return Ok(persons);
+        }
+
+
     }
 }

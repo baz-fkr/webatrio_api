@@ -25,6 +25,9 @@ namespace WebAtrio.UsersJobsManagement.Models.Entities
         [DataType(DataType.DateTime)]
         public DateTime BirthDate { get; set; }
 
+        [Column("jobs_id")]
+        public List<JobEntity> Jobs { get; set; }
+
         [Column("created_at")]
         [DataType(DataType.DateTime)]
         public DateTime CreatedAt { get; set; }

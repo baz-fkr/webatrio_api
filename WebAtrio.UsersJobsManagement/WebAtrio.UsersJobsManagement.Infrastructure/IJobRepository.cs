@@ -5,5 +5,6 @@ namespace WebAtrio.UsersJobsManagement.Infrastructure
 {
     public interface IJobRepository : IBaseRepository<JobEntity>
     {
+        Task<List<JobEntity>> GetAllJobsForAPerson(Guid personId);
     }
 }

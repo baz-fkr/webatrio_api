@@ -1,4 +1,5 @@
-﻿using WebAtrio.UsersJobsManagement.Common;
+﻿using Microsoft.EntityFrameworkCore;
+using WebAtrio.UsersJobsManagement.Common;
 using WebAtrio.UsersJobsManagement.Models.Entities;
 
 namespace WebAtrio.UsersJobsManagement.Infrastructure
@@ -7,6 +8,11 @@ namespace WebAtrio.UsersJobsManagement.Infrastructure
     {
         public JobRepository(UJDbContext context) : base(context)
         {
+        }
+
+        public async Task<List<JobEntity>> GetAllJobsForAPerson(Guid personId)
+        {
+            return await context.Jobs.Where(j => j.Person.Id == personId).ToListAsync();
         }
     }
 }

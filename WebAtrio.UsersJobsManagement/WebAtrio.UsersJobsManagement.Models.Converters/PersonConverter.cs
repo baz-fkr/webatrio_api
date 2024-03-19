@@ -36,6 +36,8 @@ namespace WebAtrio.UsersJobsManagement.Models.Converters
                 FirstName = entity.FirstName,
                 LastName = entity.LastName,
                 BirthDate = entity.BirthDate,
+                Age = DateTime.UtcNow.Year - entity.BirthDate.Year,
+                Jobs = new(),
                 CreatedAt = entity.CreatedAt,
                 UpdatedAt = entity.UpdatedAt
             };

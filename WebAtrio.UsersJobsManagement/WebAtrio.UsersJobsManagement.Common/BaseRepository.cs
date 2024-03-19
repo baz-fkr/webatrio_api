@@ -6,7 +6,7 @@ namespace WebAtrio.UsersJobsManagement.Common
         where TEntity : class, IBaseEntity
         where TContext : DbContext
     {
-        private readonly TContext context;
+        protected readonly TContext context;
         public BaseRepository(TContext context)
         {
             this.context = context;

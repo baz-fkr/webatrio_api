@@ -10,11 +10,13 @@ namespace WebAtrio.UsersJobsManagement.Business
     {
         private ILogger<PersonService> _logger;
         private readonly IPersonRepository _personRepository;
+        private readonly IJobRepository _jobRepository;
 
-        public PersonService(ILogger<PersonService> logger, IPersonRepository personRepository)
+        public PersonService(ILogger<PersonService> logger, IPersonRepository personRepository, IJobRepository jobRepository)
         {
             _logger = logger;
             _personRepository = personRepository;
+            _jobRepository = jobRepository;
         }
 
         /// <summary>
@@ -39,5 +41,32 @@ namespace WebAtrio.UsersJobsManagement.Business
 
             return PersonConverter.ConvertEntityToDto(person);
         }
+
+        /// <summary>
+        /// Get all persons in the system ordered alphabetically and includes their age and current job(s)
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<PersonDto>> GetAllPersonsWithAgeAndCurrentJobs()
+        {
+            List<PersonEntity> persons = await _personRepository.GetAll();
+
+            List<PersonDto> personsDto = persons.Select(PersonConverter.ConvertEntityToDto).ToList();
+
+            foreach (PersonDto personDto in personsDto)
+            {
+                List<JobEntity> personJobs = await _jobRepository.GetAllJobsForAPerson(personDto.Id);
+                personDto.Jobs = personJobs.Select(JobConverter.ConvertEntityToDto).ToList();
+            }
+
+            return personsDto;
+        }
+
+        public async Task<List<PersonDto>> GetPersonsWhoWorkedForCompany(string companyName)
+        {
+            List<PersonEntity> persons = await _personRepository.GetPersonsWhoWorkedForCompany(companyName);
+            List<PersonDto> personDtos = persons.Select(PersonConverter.ConvertEntityToDto).ToList();
+            return personDtos;
+        }
+
     }
 }
