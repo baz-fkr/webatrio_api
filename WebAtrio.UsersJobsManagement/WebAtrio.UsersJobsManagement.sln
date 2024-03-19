@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAtrio.UsersJobsManagemen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAtrio.UsersJobsManagement.Common", "WebAtrio.UsersJobsManagement.Common\WebAtrio.UsersJobsManagement.Common.csproj", "{FA35A9CE-F47B-424E-821B-9D31C41FD401}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAtrio.UsersJobsManagement.Tests", "WebAtrio.UsersJobsManagement.Tests\WebAtrio.UsersJobsManagement.Tests.csproj", "{0A5AE6CD-22E1-4A96-8354-AEC65FACCCD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{FA35A9CE-F47B-424E-821B-9D31C41FD401}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA35A9CE-F47B-424E-821B-9D31C41FD401}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA35A9CE-F47B-424E-821B-9D31C41FD401}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A5AE6CD-22E1-4A96-8354-AEC65FACCCD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A5AE6CD-22E1-4A96-8354-AEC65FACCCD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A5AE6CD-22E1-4A96-8354-AEC65FACCCD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A5AE6CD-22E1-4A96-8354-AEC65FACCCD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
