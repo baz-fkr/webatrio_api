@@ -17,6 +17,12 @@ namespace WebAtrio.UsersJobsManagement.Business
             _personRepository = personRepository;
         }
 
+        /// <summary>
+        /// Add a new person to the system
+        /// </summary>
+        /// <param name="personDto"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         public async Task<PersonDto> AddPerson(PersonDto personDto)
         {
             // Check if the person is younger than 150 years
