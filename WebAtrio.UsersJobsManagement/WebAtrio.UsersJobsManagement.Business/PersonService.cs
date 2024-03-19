@@ -61,6 +61,11 @@ namespace WebAtrio.UsersJobsManagement.Business
             return personsDto;
         }
 
+        /// <summary>
+        /// Get persons who worked for a company
+        /// </summary>
+        /// <param name="companyName"></param>
+        /// <returns></returns>
         public async Task<List<PersonDto>> GetPersonsWhoWorkedForCompany(string companyName)
         {
             List<PersonEntity> persons = await _personRepository.GetPersonsWhoWorkedForCompany(companyName);

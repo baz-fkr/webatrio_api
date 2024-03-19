@@ -34,5 +34,20 @@ namespace WebAtrio.UsersJobsManagement.Business
 
             return JobConverter.ConvertEntityToDto(job);
         }
+
+        /// <summary>
+        /// Get all jobs for a person between two dates
+        /// </summary>
+        /// <param name="personId"></param>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <returns></returns>
+        public async Task<List<JobDto>> GetJobsForPersonBetweenDates(Guid personId, DateTime startDate, DateTime endDate)
+        {
+            List<JobEntity> jobs = await _jobRepository.GetJobsForPersonBetweenDates(personId, startDate, endDate);
+            List<JobDto> jobDtos = jobs.Select(JobConverter.ConvertEntityToDto).ToList();
+            return jobDtos;
+        }
+
     }
 }

@@ -36,7 +36,7 @@ namespace WebAtrio.UsersJobsManagement.Models.Converters
             return new JobDto
             {
                 Id = entity.Id,
-                PersonId = entity.Person.Id,
+                PersonId = entity.Person?.Id ?? Guid.Empty,
                 CompanyName = entity.CompanyName,
                 Position = entity.Position,
                 StartDate = entity.StartDate,
