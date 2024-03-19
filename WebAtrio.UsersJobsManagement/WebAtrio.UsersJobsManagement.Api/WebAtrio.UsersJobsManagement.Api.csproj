@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.28">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.22" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WebAtrio.UsersJobsManagement.Business\WebAtrio.UsersJobsManagement.Business.csproj" />
+    <ProjectReference Include="..\WebAtrio.UsersJobsManagement.Infrastructure\WebAtrio.UsersJobsManagement.Infrastructure.csproj" />
+    <ProjectReference Include="..\WebAtrio.UsersJobsManagement.Models.DTO\WebAtrio.UsersJobsManagement.Models.DTO.csproj" />
+  </ItemGroup>
+
+</Project>
